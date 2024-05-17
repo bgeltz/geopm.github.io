@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">geopm
-   &#160;<span id="projectnumber">3.0.1.dev541+gd47c53fc</span>
+   &#160;<span id="projectnumber">3.0.1.dev558+gca59ae4e0</span>
    </div>
    <div id="projectbrief">GEOPM - Global Extensible Open Power Manager</div>
   </td>
@@ -138,13 +138,13 @@ $(function() {
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classgeopm_1_1_application_record_log_imp.html#a8cdad4b600e34c9088cb04993be7646d">overhead</a>(<span class="keyword">const</span> geopm_time_s &amp;time, <span class="keywordtype">double</span> overhead_sec) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keyword">struct </span>m_layout_s {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordtype">int</span> num_record;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                int32_t num_record;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <a class="code" href="structgeopm_1_1record__s.html">record_s</a> record_table[<a class="code" href="classgeopm_1_1_application_record_log.html#afde06011487bb677f9a8360932f4e814">M_MAX_RECORD</a>];</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordtype">int</span> num_region;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                int32_t num_region;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <a class="code" href="structgeopm_1_1short__region__s.html">short_region_s</a> region_table[<a class="code" href="classgeopm_1_1_application_record_log.html#a460e8a7faf7ef87cbcad4a5dfc0deb0e">M_MAX_REGION</a>];</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            };</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            static_assert(<span class="keyword">sizeof</span>(m_layout_s) == <a class="code" href="classgeopm_1_1_application_record_log.html#aa4604eb2faf88f782ce97f0d97cbafc0">M_LAYOUT_SIZE</a>,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                          <span class="stringliteral">&quot;Defined layout size does not match the actual layout size &quot;</span>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            static_assert(<span class="keyword">sizeof</span>(m_layout_s) &lt;= <a class="code" href="classgeopm_1_1_application_record_log.html#aa4604eb2faf88f782ce97f0d97cbafc0">M_LAYOUT_SIZE</a>,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                          <span class="stringliteral">&quot;Layout size used in geopmdpy/system_files.py to create shared memory footprint is smaller than required by C++ code&quot;</span>);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keyword">struct </span>m_region_enter_s {</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordtype">int</span> record_idx;</div>
