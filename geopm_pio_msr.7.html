@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,19 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>geopm_pio_msr(7) – Signals and controls for Model Specific Registers (MSRs) &mdash; GEOPM  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +35,6 @@
             GEOPM
               <img src="https://geopm.github.io/images/geopm-logo-clear.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                3.0.1.dev730+g3496281df
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -85,6 +79,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopmbench.1.html">geopmbench(1) – synthetic benchmark application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmctl.1.html">geopmctl(1) – GEOPM runtime control application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmendpoint.1.html">geopmendpoint(1) – command line tool for dynamic policy control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopmexporter.1.html">geopmexporter(1) – Prometheus exporter for GEOPM metrics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmlaunch.1.html">geopmlaunch(1) – application launch wrapper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmread.1.html">geopmread(1) – query platform information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmsession.1.html">geopmsession(1) – Command line interface for the GEOPM service batch read features</a></li>
@@ -538,7 +533,7 @@ available across Intel x86 microarchitectures.</p>
 <li><p><strong>Unit</strong>: none</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate" id="msr-fixed-ctr0-inst-retired-any"><span class="pre">MSR::FIXED_CTR0:INST_RETIRED_ANY</span></code></dt><dd><p>The count of the number of instructions executed.</p>
+<dt><code class="docutils literal notranslate" id="msr-fixed-ctr0-inst-retired-any"><span class="pre">MSR::FIXED_CTR0:INST_RETIRED_ANY</span></code></dt><dd><p>The count of the number of instructions executed. Requires geopmwrite -e.</p>
 <ul class="simple">
 <li><p><strong>Aggregation</strong>: sum</p></li>
 <li><p><strong>Domain</strong>: cpu</p></li>
@@ -546,7 +541,7 @@ available across Intel x86 microarchitectures.</p>
 <li><p><strong>Unit</strong>: none</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate" id="msr-fixed-ctr1-cpu-clk-unhalted-thread"><span class="pre">MSR::FIXED_CTR1:CPU_CLK_UNHALTED_THREAD</span></code></dt><dd><p>The count of the number of cycles while the logical processor is not in a halt state.  The count rate may change based on core frequency.</p>
+<dt><code class="docutils literal notranslate" id="msr-fixed-ctr1-cpu-clk-unhalted-thread"><span class="pre">MSR::FIXED_CTR1:CPU_CLK_UNHALTED_THREAD</span></code></dt><dd><p>The count of the number of cycles while the logical processor is not in a halt state.  The count rate may change based on core frequency.  Requires geopmwrite -e.</p>
 <ul class="simple">
 <li><p><strong>Aggregation</strong>: sum</p></li>
 <li><p><strong>Domain</strong>: cpu</p></li>
@@ -554,7 +549,7 @@ available across Intel x86 microarchitectures.</p>
 <li><p><strong>Unit</strong>: none</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate" id="msr-fixed-ctr2-cpu-clk-unhalted-ref-tsc"><span class="pre">MSR::FIXED_CTR2:CPU_CLK_UNHALTED_REF_TSC</span></code></dt><dd><p>The count of the number of cycles while the logical processor is not in a halt state and not in a stop-clock state.  The count rate is fixed at the TIMESTAMP_COUNT rate.</p>
+<dt><code class="docutils literal notranslate" id="msr-fixed-ctr2-cpu-clk-unhalted-ref-tsc"><span class="pre">MSR::FIXED_CTR2:CPU_CLK_UNHALTED_REF_TSC</span></code></dt><dd><p>The count of the number of cycles while the logical processor is not in a halt state and not in a stop-clock state.  The count rate is fixed at the TIMESTAMP_COUNT rate.  Requires geopmwrite -e.</p>
 <ul class="simple">
 <li><p><strong>Aggregation</strong>: sum</p></li>
 <li><p><strong>Domain</strong>: cpu</p></li>
@@ -2382,7 +2377,7 @@ available across Intel x86 microarchitectures.</p>
 <li><p><strong>Unit</strong>: none</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate" id="msr-fixed-ctr-ctrl-en0-os"><span class="pre">MSR::FIXED_CTR_CTRL:EN0_OS</span></code></dt><dd><p>Count <a class="reference internal" href="#msr-fixed-ctr0-inst-retired-any"><span class="std std-ref">MSR::FIXED_CTR0:INST_RETIRED_ANY</span></a> events while in kernel mode. When reading at a higher level domain than its native domain, it aggregates as the count of all such bits that have been set.</p>
+<dt><code class="docutils literal notranslate" id="msr-fixed-ctr-ctrl-en0-os"><span class="pre">MSR::FIXED_CTR_CTRL:EN0_OS</span></code></dt><dd><p>Count <a class="reference internal" href="#msr-fixed-ctr0-inst-retired-any"><span class="std std-ref">MSR::FIXED_CTR0:INST_RETIRED_ANY</span></a> events while in kernel mode. When reading at a higher level domain than its native domain, it aggregates as the count of all such bits that have been set.  Requires geopmwrite -e.</p>
 <ul class="simple">
 <li><p><strong>Aggregation</strong>: sum</p></li>
 <li><p><strong>Domain</strong>: cpu</p></li>
@@ -3205,9 +3200,9 @@ available across Intel x86 microarchitectures.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CPU_CORE_TEMPERATURE</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::THERM_STATUS:DIGITAL_READOUT</span></code></p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">CPU_CYCLES_REFERENCE</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::FIXED_CTR2:CPU_CLK_UNHALTED_REF_TSC</span></code></p>
+<dt><code class="docutils literal notranslate"><span class="pre">CPU_CYCLES_REFERENCE</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::MPERF:MCNT</span></code></p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">CPU_CYCLES_THREAD</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::FIXED_CTR1:CPU_CLK_UNHALTED_THREAD</span></code></p>
+<dt><code class="docutils literal notranslate"><span class="pre">CPU_CYCLES_THREAD</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::APERF:ACNT</span></code></p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CPU_ENERGY</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::PKG_ENERGY_STATUS:ENERGY</span></code></p>
 </dd>
@@ -3219,7 +3214,7 @@ available across Intel x86 microarchitectures.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CPU_FREQUENCY_STATUS</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::PERF_STATUS:FREQ</span></code></p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">CPU_INSTRUCTIONS_RETIRED</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::FIXED_CTR0:INST_RETIRED_ANY</span></code></p>
+<dt><code class="docutils literal notranslate"><span class="pre">CPU_INSTRUCTIONS_RETIRED</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::FIXED_CTR0:INST_RETIRED_ANY</span></code>.  Requires the fixed counters to be enabled (<code class="docutils literal notranslate"><span class="pre">geopmwrite</span> <span class="pre">-e</span></code>).</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CPU_PACKAGE_TEMPERATURE</span></code></dt><dd><p>Maps to <code class="docutils literal notranslate"><span class="pre">MSR::PACKAGE_THERM_STATUS:DIGITAL_READOUT</span></code></p>
 </dd>
