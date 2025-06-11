@@ -141,7 +141,9 @@ var menudata={children:[
 {text:"w",url:"functions_vars.html#index_w"}]},
 {text:"Enumerations",url:"functions_enum.html"},
 {text:"Enumerator",url:"functions_eval.html",children:[
-{text:"m",url:"functions_eval.html#index_m"}]},
+{text:"g",url:"functions_eval.html#index_g"},
+{text:"m",url:"functions_eval.html#index_m"},
+{text:"n",url:"functions_eval.html#index_n"}]},
 {text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
@@ -150,9 +152,11 @@ var menudata={children:[
 {text:"_",url:"globals.html#index__5F"},
 {text:"c",url:"globals.html#index_c"},
 {text:"d",url:"globals.html#index_d"},
-{text:"g",url:"globals.html#index_g"}]},
+{text:"g",url:"globals.html#index_g"},
+{text:"m",url:"globals.html#index_m"}]},
 {text:"Functions",url:"globals_func.html",children:[
-{text:"g",url:"globals_func.html#index_g"}]},
+{text:"g",url:"globals_func.html#index_g"},
+{text:"m",url:"globals_func.html#index_m"}]},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[
